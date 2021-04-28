@@ -7,20 +7,20 @@ uses
 
 type
 
-  Billetes = (B1, B2, B5, B10, B20, B50, B100, B200, B500, B1000);
+  Billetes = (B1, B2, B5, B10, B20, B50, B100, B200, B500, B1000); // Enumerado de Billetes
 
   Caja = object
   private
-    Contenedor: array [B1 .. B1000] of Integer;
+    Contenedor: array [B1 .. B1000] of Integer; // Caja Registrdora, solo visible por el TAD
   public
-    Auxiliar: array [B1 .. B1000] of Integer;
-    function EnumToInt(B: Billetes): Integer;
-    function EnumToStr(B: Billetes): string;
-    procedure Inicializar();
-    procedure InicializarAUX();
-    procedure Cargar();
-    function EstadoySaldo: Integer;
-    function DarVuelto(MontoCobrar: Integer; var Vuelto: Integer): Boolean;
+    Auxiliar: array [B1 .. B1000] of Integer; // Caja auxiliar, para intercambios, entrada/salida de billetes y backups
+    function EnumToInt(B: Billetes): Integer; // Convierte Enumerado a Entero
+    function EnumToStr(B: Billetes): string;  // Convierte Enumerado a String
+    procedure Inicializar(); // Pone en 0 el vector Contenedor
+    procedure InicializarAUX(); // Pone en 0 vector Auxiliar
+    procedure Cargar(); // Carga los billetes a la caja
+    function EstadoySaldo: Integer; // Devuelve el monto total de bielletes y cantidad de cada denominacion
+    function DarVuelto(MontoCobrar: Integer; var Vuelto: Integer): Boolean; // Da el vuelto si es posible del cobro
   end;
 
 implementation
