@@ -15,7 +15,7 @@ type
   public
     Auxiliar: array [B1 .. B1000] of Integer; // Caja auxiliar, para intercambios, entrada/salida de billetes y backups
     function EnumToInt(B: Billetes): Integer; // Convierte Enumerado a Entero
-    function EnumToStr(B: Billetes): string;  // Convierte Enumerado a String
+    function EnumToStr(B: Billetes): string; // Convierte Enumerado a String
     procedure Inicializar(); // Pone en 0 el vector Contenedor
     procedure InicializarAUX(); // Pone en 0 vector Auxiliar
     procedure Cargar(); // Carga los billetes a la caja

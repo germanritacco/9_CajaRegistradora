@@ -138,13 +138,13 @@ begin
           Memo1.Clear;
           Memo1.Lines.Add('Vuelto a dar: $' + IntToStr(Vuelto));
           Memo1.Lines.Add('');
-          Memo1.Lines.Add('Cantidad de Billetes:');
+          Memo1.Lines.Add('Cantidad de Billetes a dar al cliente:');
           Memo1.Lines.Add('');
           for I:= B1 to B1000 do
             Memo1.Lines.Add('$' + Money.EnumToStr(I) + ': ' + IntToStr(Money.Auxiliar[I]));
         end
       else
-        Application.MessageBox('No hay billetes suficientes', 'Error', MB_OK + MB_ICONERROR);
+        Application.MessageBox('Billetes Insuficientes para vuelto o cobro', 'Error', MB_OK + MB_ICONERROR);
     end
   else
     Application.MessageBox('El monto a cobrar debe ser > 0', 'Advertencia', MB_OK + MB_ICONWARNING);
